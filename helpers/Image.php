@@ -163,6 +163,9 @@ class Image
             case IMAGETYPE_PNG:
                 $sourceGDImage = imagecreatefrompng($sourceImagePath);
                 break;
+            case IMAGETYPE_WEBP:
+                $sourceGDImage = imagecreatefromwebp($sourceImagePath);
+                break;
         }
         return $sourceGDImage;
     }
@@ -185,6 +188,9 @@ class Image
                 break;
             case IMAGETYPE_PNG:
                 $result = imagepng($thumbnailGDImage, $thumbnailImagePath, 9);
+                break;
+            case IMAGETYPE_WEBP:
+                $result = imagewebp($thumbnailGDImage, $thumbnailImagePath);
                 break;
         }
         return $result;
