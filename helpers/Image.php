@@ -114,7 +114,7 @@ class Image
             if (isset($degrees))
                 $rotate = imagerotate($sourceGDImage, $degrees * -1, 0);
             // Set transparate
-            if ($sourceImageType == IMAGETYPE_PNG || $sourceImageType == IMAGETYPE_GIF) {
+            if ($sourceImageType == IMAGETYPE_PNG || $sourceImageType == IMAGETYPE_GIF || $sourceImageType == IMAGETYPE_WEBP) {
                 imagealphablending($thumbnailGDImage, false);
                 imagesavealpha($thumbnailGDImage, true);
                 $transparent = imagecolorallocatealpha($thumbnailGDImage, 255, 255, 255, 127);
